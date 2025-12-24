@@ -1,0 +1,11 @@
+#version 410 core
+out vec4 FragColor;
+
+in float colorDarkener;
+uniform vec4 uColor;
+uniform float darkenStrength;
+
+void main() {
+    float dark = 1.0 - ((1.0 - colorDarkener) * darkenStrength);
+    FragColor = uColor * (colorDarkener * dark);
+}
